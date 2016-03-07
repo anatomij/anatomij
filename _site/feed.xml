@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artjom Svjatickis</title>
+    <description>Software Engineer</description>
+    <link>http://127.0.0.1:4000/homepage/profile//</link>
+    <atom:link href="http://127.0.0.1:4000/homepage/profile//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 07 Mar 2016 04:11:49 -0800</pubDate>
+    <lastBuildDate>Mon, 07 Mar 2016 04:11:49 -0800</lastBuildDate>
+    <generator>Jekyll v3.0.2</generator>
+    
+      <item>
+        <title>Can computers be truly random?</title>
+        <description>&lt;p&gt;How does a computer generate a random number? To answer this question let’s first try to understand why random numbers are so important. Besides the obvious things like creating a random outcome in a video game, randomness is important for cryptography.&lt;/p&gt;
+
+&lt;p&gt;Cryptography is crucial to some of the most important tasks that are performed on the internet such as HTTPS connections and data encryption. An algorithm cannot just use the same numbers, therefore it must generate them in an unpredictable manner, so that no other algorithm or hacker can crack it.&lt;/p&gt;
+
+&lt;p&gt;Therefore, we must distinguish the differences between a truly random number and one that is created by a computer algorithm. Before we explain how a truly random is generated let’s examine the following simple code:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;shuffle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newArr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;newArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;newArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newArr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s look at a simple shuffling function that:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Takes an array as an argument&lt;/li&gt;
+  &lt;li&gt;Copies the array into newArr&lt;/li&gt;
+  &lt;li&gt;Iterates over the newArr using _.each&lt;/li&gt;
+  &lt;li&gt;Generates a random number using Math.random()&lt;/li&gt;
+  &lt;li&gt;Assigns the temp variable to a random index in the newArr&lt;/li&gt;
+  &lt;li&gt;Returns the Array&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If we compare these two arrays, what are the chances that our newArr matches the original array? That depends on the amount of elements in that array of course, but due to the nature of this function it’s not as random as we would hope. This function’s randomness depends solely on the  built in JavaScript function Math.random().&lt;/p&gt;
+
+&lt;p&gt;Now its randomness also depends on the engine that compiles it, but all in all it is a pseudo random generator. For small numbers and daily use, it is perfectly fine, but for larger numbers one can see a pattern.&lt;/p&gt;
+
+&lt;p&gt;John von Neumann once said that: “Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.”&lt;/p&gt;
+
+&lt;p&gt;This is where it gets interesting, for a computer to generate a ‘true’ random number, it has to measure an outside physical phenomenon, like the radioactive decay of an atom, where according to quantum theory there is no way to know when the radioactive decay will occur, therefore it is essentially pure randomness created by the universe.&lt;/p&gt;
+
+&lt;p&gt;Most common cases for generating random numbers is to rely on atmospheric noise or use some source of unpredictable data which is called entropy. Entropy can be collected in the means of random keystrokes and their timing.&lt;/p&gt;
+
+&lt;p&gt;By now it is obvious to us that generating random numbers is important, because when we use pseudo random numbers, an attacker could match it with an algorithm and predict the results.&lt;/p&gt;
+
+&lt;p&gt;To generate a random number you can checkout:  &lt;br /&gt;
+&lt;a href=&quot;https://www.random.org/&quot;&gt;random.org&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 06 Mar 2016 18:50:00 -0800</pubDate>
+        <link>http://127.0.0.1:4000/homepage/profile//2016/Can-computers-be-truly-random/</link>
+        <guid isPermaLink="true">http://127.0.0.1:4000/homepage/profile//2016/Can-computers-be-truly-random/</guid>
+        
+        <category>javscript</category>
+        
+        
+        <category>jekyll</category>
+        
+      </item>
+    
+  </channel>
+</rss>

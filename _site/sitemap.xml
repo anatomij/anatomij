@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    
+    <url>
+      <loc>http://127.0.0.1:4000/homepage/2016/Can-computers-be-truly-random/</loc>
+      
+        <lastmod>2016-03-06T18:50:00-08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+  
+    
+    <url>
+      <loc>http://127.0.0.1:4000/homepage/categories/</loc>
+      
+        <lastmod>2016-03-07T04:11:49-08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://127.0.0.1:4000/homepage/feed.xml</loc>
+      
+        <lastmod>2016-03-07T04:11:49-08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://127.0.0.1:4000/homepage/</loc>
+      
+        <lastmod>2016-03-07T04:11:49-08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://127.0.0.1:4000/homepage/js/main.js</loc>
+      
+        <lastmod>2016-03-07T04:11:49-08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+    <url>
+      <loc>http://127.0.0.1:4000/homepage/tags/</loc>
+      
+        <lastmod>2016-03-07T04:11:49-08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+</urlset>
