@@ -1,8 +1,8 @@
 # Site settings
 title: Artjom Svjatickis
 description: 'Software Engineer'
-url: 'http://anatomij.github.io/anatomij'
-baseurl: '/anatomij'
+url: 'http://127.0.0.1:4000/homepage'
+baseurl: '/profile/'
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
