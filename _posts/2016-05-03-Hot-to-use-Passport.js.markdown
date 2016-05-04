@@ -14,9 +14,11 @@ During signup and signin Passport.js generates a jwt encoded token that gets ret
 
 Below are the example routes you would have when authenticated users:
 ``` ruby
+
 app.post('/api/users/signup', passport.authenticate('signup'), handler.signup);
 app.post('/api/users/signin', passport.authenticate('signin'), handler.signin);
 app.get('/api/users', passport.authenticate('jwt'), handler.getProfileInfo);
+
 ```
 
 Now that we established a route, let's examine the signup strategy for Passport.js:
@@ -70,22 +72,24 @@ module.exports = function(passport){
   jwt(passport);
 }
 ```
-Below is a visual representation of what the functions achieve.
-``` ruby
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-                 |
-});              |
-                 |
-                 |____________________> saved to session req.session.passport.user = {id:'..'}
-                                   |          
-passport.deserializeUser(function(id, done) {
-                  ________________|
-                  |
-    User.findById(id, function(err, user) {
-        done(err, user);
-                   |______________>user object attaches to the request as req.user
 
- });
-  });
+Below is a visual representation of what the functions achieve.
+
+``` ruby
+  passport.serializeUser(function(user, done) {
+      done(null, user.id);
+                   |
+  });              |
+                   |
+                   |____________________> saved to session req.session.passport.user = {id:'..'}
+                                     |          
+  passport.deserializeUser(function(id, done) {
+                    ________________|
+                    |
+      User.findById(id, function(err, user) {
+          done(err, user);
+                     |______________>user object attaches to the request as req.user
+
+   });
+    });
 ```
