@@ -12,7 +12,7 @@ Managing authentication is not a task for the weak, especially if you are not go
 There are three main strategies to setup and use with Passport.js, one for user signup, one for user signin and another for authentication based on a jwt token.
 During signup and signin Passport.js generates a jwt encoded token that gets returned back to the client for further client side authentication and subsequent calls to an API route that requires authentication. For this example we are going to use MongoDB with mongoose to manage incoming user data.
 
-Below are the example routes you would have when authenticated users:
+Below are the example routes you would have when authenticating users:
 
 ``` ruby
 app.post('/api/users/signup', passport.authenticate('signup'), handler.signup);
@@ -73,7 +73,7 @@ module.exports = function(passport){
 }
 ```
 
-Below is a visual representation of what the functions achieve.
+Below is a visual representation of what these methods achieve.
 
 ``` ruby
 
